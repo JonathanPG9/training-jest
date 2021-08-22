@@ -1,0 +1,18 @@
+{
+  "name": "trainingjest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage" : "jest --coverage",
+    "test:watch" : "jest --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.14.9",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6"
+  }
+}
