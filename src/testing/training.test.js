@@ -1,11 +1,12 @@
 import { expect } from "@jest/globals"
-import {suma,arrPlusOne,
+import {suma,
+        addingOne,
         filterHighToN,
         counterOfLetters,
         searchAnagramInArray,
         fizzBuzz
         }
-from "../code/app"
+from "../code/app-jest.js"
 
 describe('test function sum', () => {
   it("should return valid sum", () => {
@@ -13,20 +14,20 @@ describe('test function sum', () => {
   })
 })
 
-describe("Test function arrPlusOne", () => {
+describe("Test function addingOne", () => {
   it("should be return the array with a plus in each number", () => {
     const arrayNumber = [1,2,3,4,5,6];
-    const result = arrPlusOne(arrayNumber)
+    const result = addingOne(arrayNumber)
     expect(result).toEqual([2,3,4,5,6,7])
   })
   it("if the param is a string/number/object should return an error message", () => {
-    expect(arrPlusOne("w")).toBe("Error only Arrays")
-    expect(arrPlusOne(2)).toBe("Error only Arrays")
-    expect(arrPlusOne({hola : 'w'})).toBe("Error only Arrays")
+    expect(addingOne("w")).toBe("Error only Arrays")
+    expect(addingOne(2)).toBe("Error only Arrays")
+    expect(addingOne({hola : 'w'})).toBe("Error only Arrays")
   })
   it("if the param is a empty array should return a message of this", () => { 
     const emptyArr = []; 
-    const result = arrPlusOne(emptyArr) 
+    const result = addingOne(emptyArr) 
     expect(result).toBe("Not emptys arrays")
   })
 })
@@ -73,13 +74,12 @@ describe("Test function searchAnagramInArray", () => {
     const result = searchAnagramInArray(arrayTest)
     expect(result).toEqual(["aroma","amor","amer"])
   })
-  it("Should be return Undefined if we pass a empty array or the value is string / number / obj", () => {
+  it("Should be return Undefined if we pass a empty array or the value is string / number or obj", () => {
     const emptyArray = []
     const obj = {test:"test"}
     const n = 2;
     const wrd = "test"
-    const result = searchAnagramInArray(emptyArray)
-    expect(result).toBeUndefined()
+    expect(searchAnagramInArray(emptyArray)).toBeUndefined()
     expect(searchAnagramInArray(obj)).toBeUndefined()
     expect(searchAnagramInArray(n)).toBeUndefined()
     expect(searchAnagramInArray(wrd)).toBeUndefined()
@@ -88,9 +88,9 @@ describe("Test function searchAnagramInArray", () => {
 
 describe("Test function fizzBuzz" , () => {
   it("If we pass a parameter like 0, 1 or 2 must be throw a Error",() => {
-    expect(() => fizzBuzz(0)).toThrow('Only numbers highest  to 2');
-    expect(() => fizzBuzz(1)).toThrow('Only numbers highest  to 2');
-    expect(() => fizzBuzz(2)).toThrow('Only numbers highest  to 2');
+    expect(() => fizzBuzz(0)).toThrow('Only numbers highest to 2');
+    expect(() => fizzBuzz(1)).toThrow('Only numbers highest to 2');
+    expect(() => fizzBuzz(2)).toThrow('Only numbers highest to 2');
   })
   it("If we pass a parameter as a string/undefined or obj must be throw a Error",() => {
     expect(() => fizzBuzz("3")).toThrow("You must provide a number.");
