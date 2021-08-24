@@ -1,4 +1,4 @@
-export const suma = (a,b) => a + b;
+export const sum = (a,b) => a + b;
 
 // given a array of numbers add 1 on each number
 
@@ -57,7 +57,7 @@ export const searchAnagramInArray = (arr) => {
 
   if(arr.length < 1 || !(Array.isArray(arr)) ) return undefined
 
-  let arrToReturn = []
+  const arrToReturn = []
   const wordsAndKeys = arr.map(x => ({
     word:x,
     key: convertWord(x)
@@ -77,7 +77,7 @@ export const fizzBuzz = (n) => {
   if(n <= 2) throw new Error('Only numbers highest to 2')
   if(n === undefined || typeof n !== 'number') throw new Error('You must provide a number.')
 
-  let result = [];
+  const result = [];
   for(let i = 1; i <= n; i++){
     i % 3 === 0 && i % 5 === 0 ? result.push("fizzBuzz") : 
     i % 3 === 0 ? result.push("fizz") :
@@ -101,7 +101,12 @@ export const palindrome = (str) => {
 }
 
 export const convertToRoman = (number) => {
-  let romanNumbers = {
+
+  if(!number) throw new Error("Unexpected value")
+  
+  if(typeof number !== "number") throw new Error("Only numbers")
+  
+  const romanNumbers = {
     M: 1000,
     CM: 900,
     D: 500,
