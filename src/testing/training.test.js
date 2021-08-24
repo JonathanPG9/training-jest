@@ -139,7 +139,7 @@ describe("Test function convertToRoman", () => {
   it(" Should be throw a Error if we pass a string/obj/array ",() => {
     expect(() => convertToRoman({test : "test"})).toThrow('Only numbers')
     expect(() => convertToRoman("test")).toThrow('Only numbers')
-    expect(() => convertToRoman([])).toThrow('Only numbers')
+    expect(() => convertToRoman([1,2,3,4])).toThrow('Only numbers')
   })
 
 })
