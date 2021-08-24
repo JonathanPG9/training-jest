@@ -74,7 +74,7 @@ export const searchAnagramInArray = (arr) => {
 
 export const fizzBuzz = (n) => {
 
-  if(n <= 2) throw new Error('Only numbers highest  to 2')
+  if(n <= 2) throw new Error('Only numbers highest to 2')
   if(n === undefined || typeof n !== 'number') throw new Error('You must provide a number.')
 
   let result = [];
